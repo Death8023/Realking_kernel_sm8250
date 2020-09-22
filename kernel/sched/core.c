@@ -815,11 +815,6 @@ static inline unsigned int uclamp_bucket_id(unsigned int clamp_value)
 	enqueue_task(rq, p, flags);
 }
 
-static inline unsigned int uclamp_bucket_base_value(unsigned int clamp_value)
-{
-	return UCLAMP_BUCKET_DELTA * uclamp_bucket_id(clamp_value);
-}
-
 static inline unsigned int uclamp_none(enum uclamp_id clamp_id)
 {
 	if (clamp_id == UCLAMP_MIN)
