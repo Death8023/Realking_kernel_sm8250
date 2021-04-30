@@ -813,6 +813,8 @@ static inline unsigned int uclamp_bucket_id(unsigned int clamp_value)
 		rq->nr_uninterruptible--;
 
 	enqueue_task(rq, p, flags);
+
+	return min_t(unsigned int, clamp_value / UCLAMP_BUCKET_DELTA, UCLAMP_BUCKETS - 1);
 }
 
 static inline unsigned int uclamp_none(enum uclamp_id clamp_id)
