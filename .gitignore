@@ -141,3 +141,7 @@ build.sh
 
 # Ignore out directory
 out/
+
+# Trash
+*.zip
+*.log
